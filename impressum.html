@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div.top{
+            margin: 0%;
+            padding: 10px;
+            height: 10%;
+            width: 100%;
+            background-color: darkgreen;
+
+            position: sticky;
+            top: 0;
+            right:0;
+        }
+        div.bottom{
+            margin: 0%;
+            padding: 0%;
+            height: 17%;
+            width: 100%;
+            background-color:darkgray;
+        
+            position: sticky;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
     <title>Impressum</title>
 </head>
 <body>
+    <div class="top"><h1>HOTEL Deluxe am Cobenzl</h1></div>
     <h1 style="color:green;text-align:center">IMPRESSUM</h1>
     <p><h3>Hotelverwaltung</h3>
         <image src="Images/Tseren.jpeg" alt="Lkhagvatseren Nasanbayar"><image src="Images/Helmut.jpeg" alt="Helmut Söllinger"></image>
@@ -38,8 +63,9 @@
         richten: <a href=http://ec.europa.eu/odr>http://ec.europa.eu/odr</a><br><br>
         Sie können allfällige Beschwerde auch an<br>
         die oben angegebene E-Mail-Adresse<br>
-        richten.</p>
-    <footer style="background-color:darkgray;color:green">
+        richten.
+    </p>
+    <div class="bottom" style="color:green">
         <p style="text-align:center;">
         <a href="help.html">FAQ's</a></p>
         Hotel Deluxe am Cobenzl<br>
@@ -48,6 +74,6 @@
         <br>
         Tel.: +43 0 323 43<br>
         Email: <a href="mailto:office@hoteldeluxe-cobenzl.at">office@hoteldeluxe-cobenzl.at</a><br>
-        </footer>
+        </div>
 </body>
 </html>
