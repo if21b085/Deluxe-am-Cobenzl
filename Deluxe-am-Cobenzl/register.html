@@ -40,12 +40,55 @@
     </div>
 
 
+    <div style="text-align:center">
+        <h2 >REGISTRIERUNG</h2>
+        <form action="/action_page.php" target=_blank>
+            <fieldset>
+                <legend><strong>Benutzer Daten:</strong></legend>
+                <label for="uname">*Username:</label><br>
+                <input type="text" id="uname" placeholder="Username"><br>
+                <label for="pword">*Password:</label><br>
+                <input type="password" id="pword" placeholder="Password" method="post"><br>
+                <label for="pword">*Password-Wiederholung:</label><br>
+                <input type="password" id="pword" placeholder="Password" method="post"><br>
+                <label for="email">*Enter your email:</label><br>
+                <input type="email" id="email" name="email">
+            </fieldset>
+
+
+            <fieldset>
+                <legend><strong>Persönliche Daten:</strong></legend>
+                <label for="anrede">*Anrede:</label>
+                <select id="anrede" name="anrede">
+                    <option value="waehlen">bitte wählen</option>
+                    <option value="frau">Frau</option>
+                    <option value="herr">Herr</option>
+                </select><br><br>
+
+                <label for="vorname">*Vorname:</label>
+                <input type="text" id="vorname" placeholder="Vorname"><br><br>
+
+                <label for="nachname">*Nachname:</label>
+                <input type="text" id="nachname" placeholder="Nachname"><br>
+            </fieldset>
+
+
+                <input type="checkbox" id="agb" name="agb" value="agb">
+                <label for="agb"> Ich bin damit einverstanden, dass Diese Daten zur Anmeldung benutzt werden.</label><br>
+                <input type="button" onclick="alert('Success!')" value="anmelden"><br><br><br>
+    
+                <a href="index.html">Home</a>
+            </fieldset>
+
+        </form>
+    </div>
+
 
 
     
     <div class="bottom" style="color:green">
         <p style="text-align:center;">
-        <a href="help.html">FAQ's</a>|<a href="impressum.html">Impressum</a></p>
+        <a href="index.html">Home</a>|<a href="help.html">FAQ's</a>|<a href="impressum.html">Impressum</a></p>
         Hotel Deluxe am Cobenzl<br>
         Am Cobenzl 45<br>
         1190 Wien<br>
