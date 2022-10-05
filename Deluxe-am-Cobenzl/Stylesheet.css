@@ -36,3 +36,6 @@ label{
 #agb{
     display: inline;
 }
+.background{
+    background-image: url('images/vineyard.jpg');
+}
