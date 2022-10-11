@@ -1,3 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+  
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+ 
 .top{
     margin: 0;
     padding: 10px;
@@ -5,10 +15,27 @@
     width: 100%;
     background-color: darkgreen;
 
-    position: sticky;
     top: 0;
     right:0;
 }
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    width: 100%;
+}
+@media only screen and (min-width:768px) {
+    .col-1 {width: 12.5%;}
+    .col-2 {width: 25%;}
+    .col-3 {width: 37.5%;}
+    .col-4 {width: 50%;}
+    .col-5 {width: 52.5%;}
+    .col-6 {width: 75%;}
+    .col-7 {width: 87.5%;}
+    .col-8 {width: 100%;}
+    .top{position: sticky;}
+}
+  
+
 .bottom{
     margin: 0%;
     padding-left: 10px;
@@ -26,9 +53,7 @@
     padding: 10px;
 }
 fieldset{
-    width: 30%;
-    display: block;
-    margin-left: 34%;
+   height: 50%;
 }
 label{
     display:block;
