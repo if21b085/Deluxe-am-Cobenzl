@@ -39,7 +39,7 @@
 .bottom{
     margin: 0%;
     padding-left: 10px;
-    height: 17%;
+    height: 25%;
     width: 100%;
     background-color:darkgray;
     color:darkgreen;
@@ -47,6 +47,9 @@
     position: sticky;
     bottom: 0;
     left: 0;
+}
+.navlink{
+    color:antiquewhite;
 }
 .login{
     text-align: right;
