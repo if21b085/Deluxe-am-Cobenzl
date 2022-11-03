@@ -50,7 +50,7 @@
   </a>
 
 </div>
-    <div class="contact"
+    <div class="bottom">
         Hotel Deluxe am Cobenzl<br>
         Am Cobenzl 45<br>
         1190 Wien<br>

@@ -18,6 +18,7 @@
                 <button onclick="document.location='login.html'">LOGIN</button>
             </div>
     </div>
+    <div><?php include 'navbar.php';?></div>
     <h1 style="color:green;text-align:center">IMPRESSUM</h1>
     <p><h3>Hotelverwaltung</h3>
         <image src="Images/Tseren.png" alt="Lkhagvatseren"><image src="Images/Helmut.jpeg" alt="Helmut Söllinger"></image>
@@ -52,7 +53,6 @@
         richten.
     </p>
     <div class="bottom" style="color:green">
-    <?php include 'navbar.php';?>
         Hotel Deluxe am Cobenzl<br>
         Am Cobenzl 45<br>
         1190 Wien<br>

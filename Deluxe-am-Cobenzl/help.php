@@ -22,6 +22,7 @@
                 <button onclick="document.location='login.html'">LOGIN</button>
             </div>
     </div>
+    <div><?php include 'navbar.php';?></div>
     <h1 style="color:green;text-align:center"> FAQ's <br></h1>
     <h1>Häufig gestellte Fragen <br></h1>
     
@@ -142,7 +143,6 @@
 
     </ul>
     <div class="bottom">
-    <?php include 'navbar.php';?>
         Hotel Deluxe am Cobenzl<br>
         Am Cobenzl 45<br>
         1190 Wien<br>
