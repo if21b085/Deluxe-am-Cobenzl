@@ -16,7 +16,7 @@
         $site = $_GET["site"] ?? "home";
 
         // for security reasone:  check if $site is in a list of available sites
-        $sites = [ "home", "help", "impressum", "login", "register"];
+        $sites = [ "home", "help", "impressum", "login", "register", "rooms"];
         if (!in_array($site, $sites)) {
             $error = "Seite non existend - " . $site;
             $site = "error";            
