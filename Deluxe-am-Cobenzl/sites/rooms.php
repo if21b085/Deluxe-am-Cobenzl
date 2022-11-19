@@ -19,7 +19,7 @@
             $errors[] = "dates equal";
         }
     }
-    if(isset($_SESSION['username'])) {
+    if(isset($_SESSION['username']) && $_SESSION['username'] == 'gast') {
     ?>
     <div  style="text-align:center">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?site=rooms" method="post">
