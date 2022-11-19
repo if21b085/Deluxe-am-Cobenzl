@@ -110,7 +110,7 @@
     </div>
     </div>
 <?php
-}else{
+}else  if($_SESSION["username"]=='gast'){
     if(isset($_POST['submitted'])) {
         $pword;
         $pword2;

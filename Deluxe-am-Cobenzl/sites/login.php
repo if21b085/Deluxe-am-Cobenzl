@@ -20,6 +20,9 @@
         if (!empty($_POST["pword"])&&!empty($_POST["uname"])&&$_POST["uname"] == "gast"&&$_POST["pword"]=="gast"){
             $_SESSION["username"] = $_POST["uname"];
         }
+        if (!empty($_POST["pword"])&&!empty($_POST["uname"])&&$_POST["uname"] == "admin"&&$_POST["pword"]=="admin"){
+            $_SESSION["username"] = $_POST["uname"];
+        }
     }else if (isset($_POST["logout"])) { 
 
         session_unset();
@@ -36,10 +39,22 @@
         <input type="submit" name="logout" value="Abmelden">
         </form>
         </div>
+<?php
+    if($_SESSION["username"]=='gast'){
+?>
         <div style="text-align:center">
             <a href="?site=rooms">Zimmer reserviern</a><br>
             <a href="?site=register">Daten bearbeiten</a>
         </div>
+<?php
+    }else if($_SESSION["username"]=='admin'){
+?>
+       <div style="text-align:center">
+            <a href="?site=upload">Newsbeitrag hochladen</a>
+        </div> 
+<?php
+   }
+?>
 
 <?php
     } else {
