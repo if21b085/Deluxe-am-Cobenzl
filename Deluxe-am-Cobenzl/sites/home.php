@@ -1,32 +1,31 @@
 
-    <div id="demo" class="carousel slide row col-sm-12" data-ride="carousel">
+<div id="carouselExampleFade" class="carousel slide" data-bs-ride="carousel">
+  <!-- indicator-->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
 
-  <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-
-  <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="images/vineyard.jpg" alt="Cobenzl-Weinberg">
+      <img src="images/vineyard.jpg" class="d-block w-100" alt="Cobenzl-Weinberg">
     </div>
     <div class="carousel-item">
-      <img src="chicago.jpg" alt="Chicago">
+      <img src="images/view.jpg" class="d-block w-100" alt="Ausblick">
     </div>
     <div class="carousel-item">
-      <img src="ny.jpg" alt="New York">
+      <img src="images/restaurant.jpg" class="d-block w-100" alt="Restaurant">
     </div>
   </div>
 
-  <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-
+   <!-- Left and right controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>

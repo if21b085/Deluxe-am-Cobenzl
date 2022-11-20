@@ -2,7 +2,6 @@
     function isSession() {
         return isset($_SESSION["username"]);
     }
-    session_start();
     $errors = [];
     if(isset($_POST['submitted'])) {
         $pword;
@@ -23,10 +22,6 @@
         if (!empty($_POST["pword"])&&!empty($_POST["uname"])&&$_POST["uname"] == "admin"&&$_POST["pword"]=="admin"){
             $_SESSION["username"] = $_POST["uname"];
         }
-    }else if (isset($_POST["logout"])) { 
-
-        session_unset();
-        session_destroy();
     }
 ?>
 <?php
@@ -76,6 +71,7 @@
                     if(in_array("no password", $errors))
                         echo '<p class="text-danger">*Kein Kennwort</p>';
             ?>
+            <br>
             <input type="submit" name="submitted" value="Login"><br>
             Noch kein Benutzerkonto?<br>
             <a href="?site=register">Hier registrieren!</a>

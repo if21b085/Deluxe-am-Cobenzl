@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $errors = [];
 
     if(isset($_POST['submitted'])) {

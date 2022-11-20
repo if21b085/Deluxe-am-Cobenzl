@@ -1,11 +1,8 @@
 <?php
-    session_start();
     if(isset($_SESSION['username']) && $_SESSION["username"]=='admin') {
 ?>
         <h1 class="mb-5 mt-5">Neuen Beitrag erstellen</h1>
 
-
-        <h2>Upload Form</h2>
         <form enctype="multipart/form-data" action="?site=news" method="post" target="blank" class="d-flex flex-column">
             <input type="file" name="picture" accept="image/*" class="mt-2 mb-2" ></input>
             <input type="text" name="news_title" class="mt-2 mb-2" placeholder="Bitte geben Sie hier den Titel ein."></input>
@@ -14,5 +11,12 @@
         </form>
 
 <?php
-    }
+    }else{
+?>
+                    <div style="text-align:center">
+                        <p>Du bist nicht als admin eingeloggt</p>
+                        <a href="?site=login">Hier einloggen!</a>
+                    </div>
+<?php
+     }
 ?>

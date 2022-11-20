@@ -21,8 +21,8 @@ function processUpload($name) {
     list($width, $height, $type, $attr) = getimagesize($upload['tmp_name']);
            
     $ratio = $width / $height;
-    $thumbnailWidth = 1280;
-    $thumbnailHeight = 720;
+    $thumbnailWidth = 720;
+    $thumbnailHeight = 480;
 
     if ($width > $height) {
         $targetHeight = floor($thumbnailWidth / $ratio);
@@ -102,6 +102,7 @@ while (($filename = readdir($dir)) !== false) {
         array_push($processedFiles, "<article class='mt-5 mb-5'><h1>Die neuste Schlagzeile!</h1>"
         . "<p>Das ist ein Beitragstext</p>" 
         . "<img src='uploads/" . $filename . "' alt='an image' width='500'>"
+        . "<hr>"
         . "</article>") ;    
     }
 }

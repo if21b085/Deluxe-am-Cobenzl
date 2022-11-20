@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $errors = [];
     if(!isset($_SESSION['username'])) {
         if(isset($_POST['submitted'])) {
@@ -214,5 +213,12 @@
     </div>
     </div>
 <?php
-}
+    }else{
+        ?>
+                    <div style="text-align:center">
+                        <p>Du bist nicht als gast eingeloggt</p>
+                        <a href="?site=login">Hier einloggen!</a>
+                    </div>
+<?php
+    }
 ?>
