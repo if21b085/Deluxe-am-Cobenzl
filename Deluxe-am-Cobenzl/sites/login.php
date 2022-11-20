@@ -44,13 +44,15 @@
 ?>
         <div style="text-align:center">
             <a href="?site=rooms">Zimmer reserviern</a><br>
-            <a href="?site=register">Daten bearbeiten</a>
+            <a href="?site=register">Daten bearbeiten</a><br>
+            <a href="?site=bookings">Meine Reservierungen einsehen</a>
         </div>
 <?php
     }else if($_SESSION["username"]=='admin'){
 ?>
        <div style="text-align:center">
-            <a href="?site=upload">Newsbeitrag hochladen</a>
+            <a href="?site=upload">Newsbeitrag hochladen</a><br>
+            <a href="?site=bookings">Reservierungen einsehen</a>
         </div> 
 <?php
    }

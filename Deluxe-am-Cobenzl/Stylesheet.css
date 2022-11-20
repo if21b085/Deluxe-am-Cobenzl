@@ -55,12 +55,25 @@ fieldset{
 label{
     display:block;
 }
+
 #agb{
     display: inline;
+}
+
+#section_sites{
+    flex:1;
 }
 
 body{
     min-height: 100vh; margin:0;
     display:flex; 
     flex-direction:column;
+}
+
+.news-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
 }

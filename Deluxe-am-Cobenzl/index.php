@@ -16,7 +16,7 @@
         $site = $_GET["site"] ?? "home";
 
         // for security reasone:  check if $site is in a list of available sites
-        $sites = [ "home", "help", "impressum", "login", "register", "rooms", "upload", "news"];
+        $sites = [ "home", "help", "impressum", "login", "register", "rooms", "upload", "news", "bookings"];
         if (!in_array($site, $sites)) {
             $error = "Seite non existend - " . $site;
             $site = "error";            
@@ -29,11 +29,11 @@
             include_once "navbar.php";
         ?>    
     </div>
-    <article>
+    <section id="section_sites"class="container-fluid d-flex justify-content-center align-items-center flex-column">
         <?php
             include_once  "sites/". $site . ".php";
         ?>
-    </article>
+    </section>
          <?php
             include_once "footer.php"
         ?>
