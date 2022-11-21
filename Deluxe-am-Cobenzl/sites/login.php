@@ -30,29 +30,69 @@
         <div style="text-align:center">
         <p>Hallo, Du bist angemeldet als <?= $_SESSION["username"]; ?>.</p>
 
-        <form method="post" class="">
-        <input type="submit" name="logout" value="Abmelden">
-        </form>
+        
         </div>
 <?php
     if($_SESSION["username"]=='gast'){
 ?>
-        <div style="text-align:center">
-            <a href="?site=rooms">Zimmer reserviern</a><br>
-            <a href="?site=register">Daten bearbeiten</a><br>
-            <a href="?site=bookings">Meine Reservierungen einsehen</a>
-        </div>
+        
+
+
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="?site=rooms" class="nav-link" aria-current="page">
+          <svg class="bi pe-none me-2" width="16" height="16"></svg>
+          Zimmer reserviern
+        </a>
+      </li>
+      <li>
+        <a href="?site=register" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"></svg>
+          Daten bearbeiten
+        </a>
+      </li>
+      <li>
+        <a href="?site=bookings" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"></svg>
+          Meine Reservierungen
+        </a>
+      </li>
+      <li style="text-align:center">     
+      <form method="post" class="">
+        <input type="submit" name="logout" value="Abmelden">
+    </form>
+      </li>
+    </ul>
+    <br>
+  </div>
 <?php
     }else if($_SESSION["username"]=='admin'){
 ?>
-       <div style="text-align:center">
-            <a href="?site=upload">Newsbeitrag hochladen</a><br>
-            <a href="?site=bookings">Reservierungen einsehen</a>
-        </div> 
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="?site=upload" class="nav-link" aria-current="page">
+          <svg class="bi pe-none me-2" width="16" height="16"></svg>
+          Newsbeitrag hochladen
+        </a>
+      </li>
+      <li>
+        <a href="?site=bookings" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"></svg>
+          Reservierungen einsehen
+        </a>
+      </li>
+      <li style="text-align:center">     
+      <form method="post" class="">
+        <input type="submit" name="logout" value="Abmelden">
+    </form>
+      </li>
+    </ul>
+  </div>
 <?php
-   }
+   }  
 ?>
-
 <?php
     } else {
 ?>

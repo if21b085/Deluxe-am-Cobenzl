@@ -29,11 +29,13 @@
             include_once "navbar.php";
         ?>    
     </div>
+    <article>
     <section id="section_sites"class="container-fluid d-flex justify-content-center align-items-center flex-column">
         <?php
             include_once  "sites/". $site . ".php";
         ?>
     </section>
+    </article>
          <?php
             include_once "footer.php"
         ?>

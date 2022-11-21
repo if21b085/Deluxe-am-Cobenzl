@@ -32,14 +32,14 @@
                         ?>
 
                         <label for="Abreise">*Abreisedatum:</label>
-                        <input type="date" id="Abreise" placeholder="Anreise" name="Abreise"><br>
+                        <input type="date" id="abreise" placeholder="Anreise" name="Abreise"><br><br>
                         <?php 
                             if(in_array("no Abreise", $errors))
                                 echo '<p class="text-danger">*Kein Abreisedatum</p>';
                             if(in_array("dates equal", $errors))
                                 echo '<p class="text-danger">*An- und Abreise dürfen nicht am selben Tag sein!</p>';
                         ?>
-                        <div style="inline"> 
+                        <div style="display:inline-block"> 
                         <select id="breakfast">
                             <option value="with" name="breakfast">mit</option>
                             <option value="without" name="breakfast">ohne</option>
@@ -50,6 +50,11 @@
                             <option value="without" name="Parkplatz">ohne</option>
                         </select>
                         <label for="parkplatz">Parkplatz</label>
+                        <select id="Haustier">
+                            <option value="with" name="Haustier">mit</option>
+                            <option value="without" name="Haustier">ohne</option>
+                        </select>
+                        <label for="Haustier">Haustier</label>
                         </div>
                     </fieldset>
                     <input type="submit" name="submitted" value="Reserviern">     
