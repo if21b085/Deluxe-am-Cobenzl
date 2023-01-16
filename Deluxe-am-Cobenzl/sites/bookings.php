@@ -1,31 +1,50 @@
+<h2>Reservierungen</h2>
 <?php
-    if(isset($_SESSION['username'])) {
-?>
-        <article class='mt-5 mb-5'>
-            <h1>Das ist eine Reservierung</h1>
-            <p>Buchungsdatum vom 20.11.2022 bis 21.11.2022</p>
-            <p>OHNE Frühstück</p>
-            <p>MIT Parkplatz</p>
-        </article>
+    if($_SESSION['username']=='admin') {
+        require_once ('dbaccess.php'); //to retrieve connection details
+        $conn = new mysqli($host, $user, $password, $database); //Datenbankverbindung aufbauen
+        $sql = "SELECT * FROM reservations";
+        $result = $conn->query($sql);
+        echo "<table border='1'>";
+        echo "<tr><th>ID</th><th>Name</th><th>datum</th><th>von</th><th>bis</th><th>Parking</th><th>Breakfast</th><th>Haustier</th><th>Preis in €</th></tr>";
+        while($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row['ReservID'] . "</td>";
+            echo "<td>" . $row['username'] . "</td>";
+            echo "<td>" . $row['datum'] . "</td>";
+            echo "<td>" . $row['von'] . "</td>";
+            echo "<td>" . $row['bis'] . "</td>";
+            echo "<td>" . $row['parkplatz'] . "</td>";
+            echo "<td>" . $row['frühstück'] . "</td>";
+            echo "<td>" . $row['haustier'] . "</td>";
+            echo "<td>" . $row['Preis'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        $conn->close();
+    }else if($_SESSION['username']=='gast') {
+        require_once ('dbaccess.php'); //to retrieve connection details
+        $conn = new mysqli($host, $user, $password, $database); //Datenbankverbindung aufbauen
+        $uname = $_SESSION['uname'];
+        $sql = "SELECT * FROM reservations where username='$uname'";
+        $result = $conn->query($sql);
+        echo "<table border='1'>";
+        echo "<tr><th>Datum</th><th>Name</th><th>von</th><th>bis</th><th>Parking</th><th>Breakfast</th><th>Haustier</th><th>Preis in €</th></tr>";
+        while($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row['datum'] . "</td>";
+            echo "<td>" . $row['username'] . "</td>";
+            echo "<td>" . $row['von'] . "</td>";
+            echo "<td>" . $row['bis'] . "</td>";
+            echo "<td>" . $row['parkplatz'] . "</td>";
+            echo "<td>" . $row['frühstück'] . "</td>";
+            echo "<td>" . $row['haustier'] . "</td>";
+            echo "<td>" . $row['Preis'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        $conn->close();
 
-        <div class="border-bottom border-dark w-100"></div>
-
-        <article class='mt-5 mb-5'>
-            <h1>Das ist eine Reservierung</h1>
-            <p>Buchungsdatum vom 25.11.2022 bis 8.11.2022</p>
-            <p>MIT Frühstück</p>
-            <p>MIT Parkplatz</p>
-        </article>
-
-        <div class="border-bottom border-dark w-100"></div>
-
-        <article class='mt-5 mb-5'>
-            <h1>Das ist eine Reservierung</h1>
-            <p>Buchungsdatum vom 01.12.2022 bis 02.12.2022</p>
-            <p>OHNE Frühstück</p>
-            <p>OHNE Parkplatz</p>
-        </article>
-<?php
     }else{
 ?>
         <div style="text-align:center">
