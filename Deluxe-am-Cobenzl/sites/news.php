@@ -100,7 +100,7 @@ while (($filename = readdir($dir)) !== false) {
     $type = mime_content_type("uploads/" . $filename);
     if (stripos($type, "image") !== false) {
         array_push($processedFiles, "<article class='mt-5 mb-5'><h1>Die neuste Schlagzeile!</h1>"
-        . "<p>Das ist ein Beitragstext</p>" 
+        . $datum = date('d-m-Y') . "<p>Das ist ein Beitragstext</p>" 
         . "<img src='uploads/" . $filename . "' alt='an image' width='500'>"
         . "<hr>"
         . "</article>") ;    

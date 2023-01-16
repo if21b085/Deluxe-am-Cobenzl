@@ -3,32 +3,61 @@
         return isset($_SESSION["username"]);
     }
     $errors = [];
-    if(isset($_POST['submitted'])) {
-        $pword;
-        $uname;
-        if (!isset($_POST["uname"]) || empty($_POST["uname"])) {
-            $errors[] = "no uname";
-        }else{
-            $uname = $_POST["uname"];
-        }
-        if (!isset($_POST["pword"]) || empty($_POST["pword"])) {
-            $errors[] = "no password";
-        } else {
-            $pword = $_POST["pword"];
-        }
-        if (!empty($_POST["pword"])&&!empty($_POST["uname"])&&$_POST["uname"] == "gast"&&$_POST["pword"]=="gast"){
-            $_SESSION["username"] = $_POST["uname"];
-        }
-        if (!empty($_POST["pword"])&&!empty($_POST["uname"])&&$_POST["uname"] == "admin"&&$_POST["pword"]=="admin"){
-            $_SESSION["username"] = $_POST["uname"];
-        }
+if (isset($_POST['submitted'])) {
+  $tippedpword;
+  $tippeduname;
+  if (!isset($_POST["uname"]) || empty($_POST["uname"])) {
+    $errors[] = "no uname";
+  } else {
+    $tippeduname = $_POST["uname"];
+  }
+  if (!isset($_POST["pword"]) || empty($_POST["pword"])) {
+    $errors[] = "no password";
+  } else {
+    $tippedpword = $_POST["pword"];
+  }
+  if (isset($_POST["uname"]) && !empty($_POST["uname"]) && isset($_POST["pword"]) && !empty($_POST["pword"])) {
+    if ($_POST["uname"] == "gast" && $_POST["pword"] == "gast") {
+      $_SESSION["username"] = $_POST["uname"];
+      $_SESSION["uname"] = 'gast';
+    } else if ($_POST["uname"] == "admin" && $_POST["pword"] == "admin") {
+      $_SESSION["username"] = $_POST["uname"];
+      $_SESSION["uname"] = 'admin';
+    } else {
+
+      require_once('dbaccess.php'); //to retrieve connection details
+      $conn = new mysqli($host, $user, $password, $database); //Datenbankverbindung aufbauen
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+      $tippeduname = $_POST["uname"];
+      $sql = "SELECT password FROM guests WHERE username = '$tippeduname'";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      $hashed_password = $row['password'];
+      /*$stmt = $conn->prepare("SELECT password FROM guests WHERE username = ?");
+      $stmt->bind_param("s", $tippeduname);
+      $stmt->execute();                                                               //prepared statement hat leider nicht funktioniert
+      var_dump($_POST["uname"]);
+      $result = $stmt->bind_result($hashed_password);
+      var_dump($hashed_password);
+      */
+      //var_dump($hashed_password, $tippedpword, $tippeduname);
+      if (password_verify($tippedpword, $hashed_password)) {
+        $_SESSION["username"] = "gast"; //role ist gast
+        $_SESSION["uname"] = $tippeduname;
+      } else {
+        echo "username not found";
+      }
     }
+  }
+}
 ?>
 <?php
     if (isSession()) {
 ?>
         <div style="text-align:center">
-        <p>Hallo, Du bist angemeldet als <?= $_SESSION["username"]; ?>.</p>
+        <p>Hallo, Du bist angemeldet als <?= $_SESSION["uname"]; ?>.</p>
 
         
         </div>
